@@ -1,4 +1,4 @@
-package net.youssfi.transactionservice.agent;
+package net.reda.transactionservice.agent;
 
 import dev.langchain4j.service.spring.AiService;
 import reactor.core.publisher.Flux;

@@ -1,4 +1,4 @@
-package net.youssfi.transactionservice.config;
+package net.reda.transactionservice.config;
 
 import dev.langchain4j.memory.chat.ChatMemoryProvider;
 import dev.langchain4j.memory.chat.MessageWindowChatMemory;

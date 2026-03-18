@@ -1,7 +1,7 @@
-package net.youssfi.transactionservice.repository;
+package net.reda.transactionservice.repository;
 
-import net.youssfi.transactionservice.entities.Transaction;
-import net.youssfi.transactionservice.entities.TransactionStatus;
+import net.reda.transactionservice.entities.Transaction;
+import net.reda.transactionservice.entities.TransactionStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

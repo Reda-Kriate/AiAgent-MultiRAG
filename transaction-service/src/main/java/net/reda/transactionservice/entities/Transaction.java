@@ -1,4 +1,4 @@
-package net.youssfi.transactionservice.entities;
+package net.reda.transactionservice.entities;
 
 import jakarta.persistence.*;
 import lombok.*;

@@ -1,6 +1,6 @@
-package net.youssfi.transactionservice.web;
+package net.reda.transactionservice.web;
 
-import net.youssfi.transactionservice.agent.TransactionAiAgent;
+import net.reda.transactionservice.agent.TransactionAiAgent;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
