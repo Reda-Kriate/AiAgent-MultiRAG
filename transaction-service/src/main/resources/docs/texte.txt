@@ -1,0 +1,35 @@
+**Angular pour les applications frontend web sont des applications de type Single Page Application (SPA)1**.
+
+◦ Une SPA Angular se compose d'**une seule page, généralement index.html1**.
+
+◦ Lorsque vous lancez votre navigateur, il charge index.html, puis le framework Angular est chargé dans cette page**1**.
+
+- **Communication avec le Backend** :
+
+◦Avec Angular (qui est principalement du JavaScript), des **requêtes HTTP sont envoyées vers le backend1**.
+
+◦ Le backend (développé avec Spring, PHP, .NET, Node.js, etc.) déclenche des traitements, souvent en allant chercher des données dans une base de données**2**.
+
+◦ Les résultats de ces traitements sont fréquemment envoyés au format **JSON2**.
+
+◦ Côté Angular, ces données JSON sont reçues et utilisées pour les afficher dans des **parties spécifiques de la page en utilisant des "web components"2**.
+
+- **Web Components** :
+
+◦ Les web components sont des **parties ou des éléments de votre page2**.
+
+◦ Ils peuvent être un formulaire, un tableau, des images, etc.**2**.
+
+◦ Un web component est considéré comme la **base des applications Angular2**.
+
+- **Historique et Évolution (AngularJS vs. Angular)** :
+
+◦ Angular a eu une ancienne version appelée **AngularJS**, qui était basée sur le **pattern MVC (Model-View-Controller)2**.
+
+▪ Dans MVC, la vue (HTML) interagit avec un contrôleur lors d'un événement, le contrôleur effectue des traitements, récupère des données, les stocke dans un modèle, puis le contrôleur notifie la vue pour qu'elle affiche les résultats du modèle**2**.
+
+◦ L'avènement de **HTML5 a introduit la notion de web component** (qui n'existait pas avant)**23**.
+
+◦ Depuis que HTML5 a été standardisé, **tous les frameworks JavaScript se sont métamorphosés et redéveloppés en se basant sur la notion de web component3**.
+
+◦ **Angular 2 (simplement appelé Angular)** est une **réécriture complète d'AngularJS3**. Pour les développeurs, passer d'AngularJS à Angular est presque comme passer à un autre framework, bien que des fondamentaux soient restés les mêmes**3**.

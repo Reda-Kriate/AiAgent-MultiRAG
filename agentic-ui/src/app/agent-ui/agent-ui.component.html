@@ -14,6 +14,9 @@
         <div class="border rounded p-3 bg-light" style="max-height:450px; overflow-y:auto;">
           <markdown [data]="response"></markdown>
         </div>
+        @for (image of images;track image){
+       <img width="80%" src="{{image}}">
+        }
     }
     </div>
   </div>

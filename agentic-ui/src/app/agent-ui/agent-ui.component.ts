@@ -1,7 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, input} from '@angular/core';
 import {FormsModule} from "@angular/forms";
 import {HttpClient, HttpDownloadProgressEvent, HttpEventType} from "@angular/common/http";
 import {MarkdownComponent} from "ngx-markdown";
+import {of} from "rxjs";
 
 @Component({
   selector: 'app-agent-ui',
@@ -16,6 +17,7 @@ import {MarkdownComponent} from "ngx-markdown";
 export class AgentUiComponent {
   response: any;
   question: any;
+  protected images: any;
 
   constructor(private http : HttpClient) {
   }
@@ -31,8 +33,18 @@ export class AgentUiComponent {
       },
       error : err => {console.log(err)},
       complete:()=>{
-
+        this.extractImgPath(this.response)
       }
     })
   }
+
+  private extractImgPath(input: string) {
+    const regex = /SOURCE_IMAGE\(([^)]+)\)=>/g;
+    let match ;
+    while ((match=regex.exec(input)) !== null ){
+      this.images.push("http://localhost:8091/image?path="+match[1])
+    }
+  }
+
+  protected readonly of = of;
 }
