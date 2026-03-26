@@ -79,7 +79,7 @@ public class agentConfig {
             Tokenizer tokenizer,
             @Value("classpath:/docs/texte.txt") Resource textResource,
             @Value("classpath:/docs") Resource folderResource,
-            @Value("classpath:/docs/pdfTest.pdf") Resource pdfResource){
+            @Value("classpath:/docs/cv1.pdf") Resource pdfResource){
         return args -> {
 
             //List<Document> documents = FileSystemDocumentLoader.loadDocuments(folderResource.getFile().toPath());

@@ -17,7 +17,7 @@ import {of} from "rxjs";
 export class AgentUiComponent {
   response: any;
   question: any;
-  protected images: any;
+  images: string[] = [];
 
   constructor(private http : HttpClient) {
   }
@@ -42,7 +42,8 @@ export class AgentUiComponent {
     const regex = /SOURCE_IMAGE\(([^)]+)\)=>/g;
     let match ;
     while ((match=regex.exec(input)) !== null ){
-      this.images.push("http://localhost:8091/image?path="+match[1])
+      this.images.push("http://localhost:8091/images?path="+match[1])
+      console.log(this.images)
     }
   }
 
