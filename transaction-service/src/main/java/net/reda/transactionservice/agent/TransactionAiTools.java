@@ -1,6 +1,5 @@
 package net.reda.transactionservice.agent;
 
-
 import dev.langchain4j.agent.tool.Tool;
 import net.reda.transactionservice.entities.Transaction;
 import net.reda.transactionservice.entities.TransactionStatus;
@@ -18,22 +17,23 @@ public class TransactionAiTools {
         this.transactionRepository = transactionRepository;
     }
 
-    @Tool("get all transactions")
-    public List<Transaction> findAllTransactions(){
+
+    @Tool("Retrieve all transactions from the database, regardless of account")
+    public List<Transaction> findAllTransactions() {
         return transactionRepository.findAll();
     }
 
-    @Tool("get  transactions by account ID ")
-    public List<Transaction> findTransactionsById(long id){
-        return transactionRepository.findByAccountId(id);
+    @Tool("Retrieve all transactions associated with a specific account ID")
+    public List<Transaction> findTransactionsById(long accountId) {
+        return transactionRepository.findByAccountId(accountId);
     }
 
-    @Tool("get  transactions by account ID ")
-    public Transaction updateTransactionStatus(long id, TransactionStatus transactionStatus){
-        Transaction byStatus = transactionRepository.findById(id).get();
-        byStatus.setStatus(transactionStatus);
-        transactionRepository.save(byStatus);
-        return byStatus;
+    @Tool("Update the status of a specific transaction identified by its ID to a new TransactionStatus value (e.g. PENDING, COMPLETED, FAILED)")
+    public Transaction updateTransactionStatus(long transactionId, TransactionStatus transactionStatus) {
+        Transaction transaction = transactionRepository.findById(transactionId)
+                .orElseThrow(() -> new IllegalArgumentException("Transaction not found: " + transactionId));
+        transaction.setStatus(transactionStatus);
+        transactionRepository.save(transaction);
+        return transaction;
     }
-
 }

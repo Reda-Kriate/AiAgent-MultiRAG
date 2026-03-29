@@ -10,14 +10,36 @@
         <button class="btn btn-primary" (click)="askAgent()">Ask Agent</button>
       </div>
 
-      @if (response){
-        <div class="border rounded p-3 bg-light" style="max-height:450px; overflow-y:auto;">
-          <markdown [data]="response"></markdown>
-        </div>
-        @for (image of images;track image){
-       <img width="80%" src="{{image}}">
-        }
-    }
+
+              @if (response){
+                <div class="border rounded p-3 bg-light mb-3" style="max-height:450px; overflow-y:auto;">
+                  <markdown [data]="response"></markdown>
+                            @for (image of images;track image){
+                              <div>
+                                <img style="max-width:100%; height:auto; object-fit:contain;" class="img-fluid rounded mb-2" src="{{image}}">
+                              </div>
+                            }
+                </div>
+            }
+
+      <!-- Zone de réponse -->
+<!--      <div *ngIf="response" class="border rounded p-3 bg-light mb-3" style="flex: 1 1 auto; overflow-y:auto;">-->
+<!--        <markdown [data]="response"></markdown>-->
+
+<!--        <div *ngFor="let image of images" class="my-2 text-center">-->
+<!--          <img [src]="image" class="img-fluid rounded" style="max-height:300px; object-fit:contain;">-->
+<!--        </div>-->
+
+<!--      @if (response){-->
+<!--        <div class="border rounded p-3 bg-light" style="max-height:450px; overflow-y:auto;">-->
+<!--          <markdown [data]="response"></markdown>-->
+<!--          @for (image of images;track image){-->
+<!--            <div>-->
+<!--              <img style="max-width:100%; height:auto; object-fit:contain;" class="img-fluid rounded mb-2" src="{{image}}">-->
+<!--            </div>-->
+<!--          }-->
+<!--        </div>-->
+<!--    }-->
     </div>
   </div>
 </div>

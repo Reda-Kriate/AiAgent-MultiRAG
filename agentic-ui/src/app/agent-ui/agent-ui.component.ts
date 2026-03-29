@@ -23,6 +23,7 @@ export class AgentUiComponent {
   }
 
   askAgent() {
+    this.images=[""]
     this.http.get("http://localhost:8091/ask?question="+this.question,
       {responseType:"text",observe:"events", reportProgress:true }).subscribe({
       next : resp => {
